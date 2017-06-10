@@ -1,0 +1,42 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '8.0'
+
+target 'myproject' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for myproject
+
+  pod 'React', :path => '../node_modules/react-native', :subspecs => [
+    'Core',
+    'RCTText',
+    'BatchedBridge',
+    'RCTNetwork',
+    'RCTWebSocket', # needed for debugging
+    # Add any other subspecs you want to use in your project
+  ]
+  pod 'Firebase/Auth'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/AppIndexing'
+  pod 'Firebase/Core'
+  pod 'Firebase/Crash'
+  pod 'Firebase/Database'
+  pod 'Firebase/DynamicLinks'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/RemoteConfig'
+  pod 'Firebase/Storage'
+  pod 'RNFirebase', :path => '../node_modules/react-native-firebase'
+  # Explicitly include Yoga if you are using RN >= 0.42.0
+  pod "Yoga", :path => "../node_modules/react-native/ReactCommon/yoga"
+
+  target 'myprojectTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'myprojectUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
